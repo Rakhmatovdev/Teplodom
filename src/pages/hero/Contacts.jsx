@@ -1,8 +1,8 @@
 const Contacts = () => {
   return (
-    <div className="container card mt-2 mb-2">
-      <h1>Пользовательское соглашение</h1>
-      <p className="lh-base">
+    <div className="container mt-2 mb-2 mx-auto">
+      <h1 className="mt-12 text-4xl ">Пользовательское соглашение</h1>
+      <p className="mt-4 text-lg">
         Публичная Оферта 1. Основные положения. 1.1. Данная Оферта является
         Договором интернет-магазина “Teolodomshop.com” по отношению к физическим
         и юридическим лицам. 1.2. На основании ГК Республики Узбекистан, а также

@@ -2,12 +2,13 @@
 import { NavLink } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch'
 import { Fragment } from 'react';
-import { useHook } from '../../context/AuthContext';
 import like from "../../photos/like.svg"
+import { useDispatch } from 'react-redux';
+import { addBacket, addLike, addSale } from '../../router/FirstSlice';
 
 
 const Smartphones = () => {
-    const {addSale,addToBacket,addToLike}=useHook()
+    const dispatch=useDispatch()
     const {data,loading,error}=useFetch('https://dummyjson.com/products/category/smartphones')
   return (
     <div className='container'>
@@ -26,7 +27,7 @@ const Smartphones = () => {
                     id="imgs"
                     className="cover"
                     width={"100"}
-                 onClick={()=>addSale(product)}
+                 onClick={()=>dispatch(addSale(product))}
                   /></NavLink>
                 </div>
                 <div className="card-titlee h3 mt-2">{product.title.slice(0, 10)}</div>
@@ -34,13 +35,13 @@ const Smartphones = () => {
                 <div className="buttons d-flex gap-2 mt-3">
                   <button
                     className="btn btn-warning"
-                    onClick={() => addToBacket(product)}
+                    onClick={() => dispatch(addBacket(product))}
                   >
                     <div className="fa fa-basket-shopping"></div> В корзину
                   </button>
                   <button
                     className="btn btn-warning"
-                    onClick={() => addToLike(product)}
+                    onClick={() => dispatch(addLike(product))}
                   >
               
                  <img src={like} alt="" />

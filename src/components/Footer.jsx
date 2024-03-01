@@ -1,116 +1,58 @@
-import "./Footer.css";
 const Footer = () => {
   return (
-    <div className="bodyf">
-      <footer>
-        <div className="content">
-          <div className="top">
-            <div className="logo-details">
-              <i className="fab fa-slack"></i>
-              <span className="logo_name">Jasurinc</span>
+    <div className="bg-slate-700 p-3">
+      <div className="container flex flex-col text-white mx-auto">
+        <div className="flex justify-between pt-12 flex-wrap md:m-0">
+          <div className="flex flex-col items-center ">
+            <div className="flex items-center justify-between ">
+              <img src="/photos/logof.svg" alt="" className="w-20" />
+              <div className=" flex-col flex ml-2">
+                <span className="text-xl font-extrabold">TEPLODOM</span>
+                <span className="text-sm w-60">
+                  Интернет магазин <br />
+                  строй материалов
+                </span>
+              </div>
             </div>
-            <div className="media-icons">
-              <a href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-          <div className="link-boxes">
-            <ul className="box">
-              <li className="link_name">Company</li>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Contact us</a>
-              </li>
-              <li>
-                <a href="#">About us</a>
-              </li>
-              <li>
-                <a href="#">Get started</a>
-              </li>
-            </ul>
-            <ul className="box">
-              <li className="link_name">Services</li>
-              <li>
-                <a href="#">App design</a>
-              </li>
-              <li>
-                <a href="#">Web design</a>
-              </li>
-              <li>
-                <a href="#">Logo design</a>
-              </li>
-              <li>
-                <a href="#">Banner design</a>
-              </li>
-            </ul>
-            <ul className="box">
-              <li className="link_name">Account</li>
-              <li>
-                <a href="#">Profile</a>
-              </li>
-              <li>
-                <a href="#">My account</a>
-              </li>
-              <li>
-                <a href="#">Prefrences</a>
-              </li>
-              <li>
-                <a href="#">Purchase</a>
-              </li>
-            </ul>
-            <ul className="box">
-              <li className="link_name">Courses</li>
-              <li>
-                <a href="#">HTML & CSS</a>
-              </li>
-              <li>
-                <a href="#">JavaScript</a>
-              </li>
-              <li>
-                <a href="#">Photography</a>
-              </li>
-              <li>
-                <a href="#">Photoshop</a>
-              </li>
-            </ul>
-            <ul className="box input-box">
-              <li className="link_name">Subscribe</li>
-              <li>
-                <input type="text" placeholder="Enter your email" />
-              </li>
-              <li>
-                <input type="button" value="Subscribe" />
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="bottom-details">
-          <div className="bottom_text">
-            <span className="copyright_text">
-              Copyright © 2024 <a href="#">Jasurinc </a>All rights reserved
-            </span>
-            <span className="policy_terms">
-              <a href="#">Privacy policy</a>
-              <a href="#">Terms & condition</a>
+            <span className="mt-2  gap-2 items-start  hidden lg:flex">
+              <i className="fa-solid fa-location-dot mt-1"></i> <i>ул.Уста Ширин, рынок{" "}
+              <br />
+              Джамий, дом 134</i>
             </span>
           </div>
+          <div className="flex flex-col leading-8 w-60">
+            <div className="font-black">Быстрые ссылки</div>
+            <div className="">Мастерам</div>
+            <div className="">Оформление заказа</div>
+            <div className="">Пользовательское соглашение</div>
+          </div>
+          <div className="flex flex-col leading-8 w-60  mt-4 md:mt-0">
+            <div className="font-black">Полезное</div>
+            <div className="">О нас</div>
+            <div className=""> Поставщикам</div>
+            <div className=""> Возврат товара</div>
+          </div>
+          <div className="flex flex-col leading-8 w-60  mt-4 md:mt-0">
+            <div className="font-black  "> Возврат товара</div>
+            <div className="">
+              <i className="fa-solid fa-phone"></i> +998 94 976 09 26
+            </div>
+            <div className="">
+              <i className="fa-solid fa-phone"></i> +998 93 228 09 06
+            </div>
+            <div className="flex gap-3 mt-2">
+              <i className="fa-brands fa-telegram"></i>
+              <i className="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-solid fa-globe"></i>
+            </div>
+          </div>
+          <div className="flex leading-8 w-60 mt-4 gap-1 md:hidden">  <i className="fa-solid fa-location-dot mt-2"></i> <i>ул.Уста Ширин, рынок{" "}
+              <br />
+              Джамий, дом 134</i> </div>
         </div>
-      </footer>
+       <div className="text-center pb-12 pt-4">&copy;2021 Teplodom. Все права защищены</div> 
+      </div>
     </div>
   );
 };

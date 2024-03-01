@@ -1,65 +1,25 @@
-import { Fragment } from "react";
-import { useFetch } from "../hooks/useFetch";
-import { useHook } from "../context/AuthContext";
-import { NavLink } from "react-router-dom";
-import like from "../photos/like.svg"
+import { NavLink } from 'react-router-dom';
+import { useFetch } from '../hooks/useFetch';
+// import Flickityn from './Flickity';
 const Home = () => {
-  const { addToBacket, addToLike,addSale ,searchValue} = useHook();
-  const { data, loading, error } = useFetch(`https://dummyjson.com/products/search?q=${searchValue}`);
+const {data,loading,error}=useFetch("http://localhost:7777/category")
   return (
-    <div className="container">
-  
-        {loading && <h1>...</h1>}
+    <div className='container mx-auto'>
+      <ul className='flex flex-wrap gap-3 justify-between mt-4 mb-10'>
+        {loading && <h1>Loading...</h1>}
         {error && <h1>{error}</h1>}
-
-
-
-
-
-
-
-
-
-
-      <div className="wrapper d-flex flex-wrap justify-content-between">
-
-        {data?.products.map((product) => {
+        {data?.map((category) => {
           return (
-            <Fragment key={product.id}>
-              <div className="card m-2">
-                <div className="card-image">
-               <NavLink to={`/sale`}>   <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    id="imgs"
-                    className="cover"
-                    width={"100"}
-                 onClick={()=>addSale(product)}
-                  /></NavLink>
-                </div>
-                <div className="card-titlee h3 mt-2">{product.title.slice(0, 10)}</div>
-                <div className="card-price mt-2 text-danger">Price: {product.price} $</div>
-                <div className="buttons d-flex gap-2 mt-3">
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => addToBacket(product)}
-                  >
-                    <div className="fa fa-basket-shopping"></div> В корзину
-                  </button>
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => addToLike(product)}
-                  >
-                   <img src={like} alt="" />
-                  </button>
-                </div>
-              </div>
-            </Fragment>
+            <NavLink to={`/products/${category?.category}`} className='border-2 w-[300px] h-[250px] shadow-lg shadow-cyan-400' key={category.id}>
+              <img className='mx-auto bg-cover w-full h-[200px]' src={category.image} alt="" />
+              <h1 className='text-center'>{category.name}</h1>
+            </NavLink>
           );
         })}
-      </div>
+      </ul>
+{/* <Flickityn/> */}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
