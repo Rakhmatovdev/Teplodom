@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
-// import Flickityn from './Flickity';
+import Flickityn from '../components/Flickity';
+import Category from '../components/Hero';
 const Home = () => {
 const {data,loading,error}=useFetch("http://localhost:7777/category")
   return (
@@ -17,7 +18,13 @@ const {data,loading,error}=useFetch("http://localhost:7777/category")
           );
         })}
       </ul>
-{/* <Flickityn/> */}
+<Flickityn/>
+<div className="flex justify-between mt-12 text-xl">
+  <div className="">Категории</div>
+  <div className="text-lg">
+Все &gt;</div>
+</div>
+<Category />
     </div>
   )
 }

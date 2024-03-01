@@ -1,14 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  backet: [],
-  show:false,
-  like:[],
-  sale:[],
-  search:""
+  like:[]
 };
-const firstSlice = createSlice({
-  name: "todo",
+const likeSlice = createSlice({
+  name: "like",
   initialState,
   reducers: {
     addBacket: (state, action) => {
@@ -38,19 +34,5 @@ state.sale=[...state.sale,action.payload]
     
   },
 });
-export const { addBacket,removeBacket,toggleShow,addLike,removeLike,addSale,removeSale,setSearchValue} = firstSlice.actions;
-export default firstSlice.reducer;
-
-// export function shotToldirish(amount, currency) {
-//   return async function (dispatch) {
-//     if (!currency === "USD") {
-//       const resp = await fetch(
-//         `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
-//       );
-//       const data = await resp.json();
-//       dispatch({ type: "acount/shotToldirish", payload: data.rates.USD });
-//     } else {
-//       dispatch({ type: "acount/shotToldirish", payload: amount });
-//     }
-//   };
-// }
+export const { addLike,removeLike} = likeSlice.actions;
+export default likeSlice.reducer;

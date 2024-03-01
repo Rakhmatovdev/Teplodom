@@ -1,22 +1,22 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import Home from "./pages/Home";
-import Backet from "./pages/Backet";
-import Like from "./pages/Like";
-import About from "./pages/About";
-import Sale from "./pages/Sale";
 import Login from "./components/Login";
 import New from "./pages/hero/New";
 import Postavshik from "./pages/hero/Postavshik";
 import Vozvrat from "./pages/hero/Vozvrat";
 import Contacts from "./pages/hero/Contacts";
 import PageNotFound from "./components/error/PageNotFound";
-import User from "./pages/User";
 import ProductsLayout from "./layout/ProductsLayout";
-import Products1 from "./pages/products/Products1";
-import Products1Detail from "./pages/products/Products1Detail";
-import Products2 from "./pages/products/Products2";
-import Products2Detail from "./pages/products/Products2Detail";
+import Backet from './features/backet/Backet';
+import Like from "./features/like/Like";
+import Sale from "./features/sale/Sale";
+import About from './pages/About';
+import User from './features/user/User';
+import Products1Detail from "./features/products/Products1Detail";
+import Products1 from './features/products/Products1';
+import Products2 from './features/products/Products2';
+import Products2Detail from './features/products/Products2Detail';
 
 function App() {
   const routes = createBrowserRouter([
@@ -51,7 +51,7 @@ function App() {
         },
         {
           path: "/user",
-          element: <User />,
+          element: <User/>,
         },
         {
           path: "/new",
@@ -75,7 +75,7 @@ function App() {
               },
             {
               path: "products2",
-              element: <Products2 />,
+              element: <Products2/>,
               },
                 {
                   path: ":p1Id",

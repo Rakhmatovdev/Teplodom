@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchValue } from "../features/FirstSlice";
+import { setSearchValue } from "../features/user/UserSlice";
 
 const Navbar = () => {
   const dispatch=useDispatch()
-  const searchValue=useSelector(state=>state.todo.search)
+  const searchValue=useSelector(state=>state.user.search)
   return (
     <div className=" container mt-12 mx-auto">
       <div className="">

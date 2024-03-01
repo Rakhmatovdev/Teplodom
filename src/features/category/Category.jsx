@@ -1,18 +1,22 @@
 
 import { NavLink } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch'
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import like from "../../photos/like.svg"
 import { useDispatch } from 'react-redux';
 import { addBacket, addLike, addSale } from '../../router/FirstSlice';
+import { getCategory } from './CategorySlice';
+import { useSelector } from 'react-redux';
 
-const Parfume = () => {
-const dispatch=useDispatch()
-    const {data,loading,error}=useFetch('https://dummyjson.com/products/category/fragrances')
+const Category = () => {
+    const dispatch=useDispatch()
+    const data=useSelector(state=>state.category)
+    console.log(data);
+    useEffect(()=>{
+dispatch(getCategory(`https://dummyjson.com/products/category/mens-watches`))
+    },[dispatch])
   return (
     <div className='container'>
-  {loading && <h1>...</h1>}
-        {error && <h1>{error}</h1>}
         <div className="wrapper d-flex flex-wrap justify-content-between">
 
 {data?.products.map((product) => {
@@ -42,7 +46,7 @@ const dispatch=useDispatch()
                     className="btn btn-warning"
                     onClick={() => dispatch(addLike(product))}
                   >
-                  
+              
                  <img src={like} alt="" />
                   </button>
                 </div>
@@ -55,4 +59,4 @@ const dispatch=useDispatch()
   )
 }
 
-export default Parfume
+export default Category
