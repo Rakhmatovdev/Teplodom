@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Category = () => {
   return (
     <div>
-      <nav className="container mx-auto mt-4 mb-3 ">
+      <nav className="container mx-auto mt-12 ">
         <div className=" ">
           <div className="gap-3 items-center justify-between hidden md:flex">
             <NavLink

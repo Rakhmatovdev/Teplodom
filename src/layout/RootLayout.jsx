@@ -5,15 +5,15 @@ import Hero from "../components/Hero"
 
 const RootLayout = () => {
   return (
-    <div>
+    <div className="flex flex-col  h-screen bg-stone-100  ">
     <Navbar/>
     <Hero/>
-    <main>
+    <main className="flex-1">
         <Outlet/>
     </main>
     <Footer/>
     </div>
-  )
+ )
 }
 
 export default RootLayout

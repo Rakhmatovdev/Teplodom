@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      
+      container:{
+        my:"max-width:1110px"
+      }
     },
   },
   plugins: [],

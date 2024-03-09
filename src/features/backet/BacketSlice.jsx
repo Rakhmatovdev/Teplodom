@@ -8,13 +8,11 @@ const basketSlice = createSlice({
   initialState,
   reducers: {
     addBacket: (state, action) => {
-       state.backet=[...state.backet,action.payload]
+      state.backet=[...state.backet,action.payload]
     },
     removeBacket:(state,action)=>{
        state.backet= state.backet.filter(user=>user.id !==action.payload)
     },
-    
-    
   },
 });
 export const { addBacket,removeBacket} = basketSlice.actions;

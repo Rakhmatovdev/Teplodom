@@ -1,6 +1,6 @@
 const Postavshik = () => {
-  return (
-    <div className="container mx-auto text-lg">
+  return (<div className="bg-stone-100">
+    <div className=" text-lg mx-auto container">
       <h1 className="mt-12 text-4xl ">Поставщикам</h1>
       <p className="mt-4">
         Компания Teplodomshop всегда готова рассматривать новые предложения о
@@ -20,13 +20,13 @@ const Postavshik = () => {
         Если Вы хотите стать поставщиком нашей компании, рекомендуем заполнить
         анкету.
       </p>
-      <p className="mt-4 pb-24">
+      <p className="mt-4 pb-14">
         Добро пожаловать, уважаемые будущие Партнеры! Мы будем всегда рады
         увидеть Ваши сообщения с вопросами или предложениями, присланные на
         специальный почтовый ящик, указанный в разделе «Контакты».
       </p>
     </div>
-  );
+ </div> );
 };
 
 export default Postavshik;

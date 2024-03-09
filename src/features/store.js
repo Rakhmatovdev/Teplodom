@@ -13,6 +13,6 @@ export const store=configureStore({
         sale:SaleSlice,
         category:CategorySlice,
         user:UserSlice,
-        product:ProductSlice
+        products:ProductSlice
     }
 })

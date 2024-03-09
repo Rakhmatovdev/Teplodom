@@ -13,10 +13,9 @@ import Like from "./features/like/Like";
 import Sale from "./features/sale/Sale";
 import About from './pages/About';
 import User from './features/user/User';
-import Products1Detail from "./features/products/Products1Detail";
-import Products1 from './features/products/Products1';
-import Products2 from './features/products/Products2';
-import Products2Detail from './features/products/Products2Detail';
+import Category from './features/category/Category';
+import Products from "./features/products/Products";
+import ProductsDetail from "./features/products/ProductsDetail";
 
 function App() {
   const routes = createBrowserRouter([
@@ -66,27 +65,27 @@ function App() {
           element: <Vozvrat />,
         },
         {
+          path: "/category",
+          element: <Category />,
+        },
+        {
           path: "/products",
           element: <ProductsLayout />,
           children: [
             {
               path: "products1",
-              element: <Products1 />,
-              },
-            {
-              path: "products2",
-              element: <Products2/>,
-              },
+              element: <Products />,
+              children: [
                 {
-                  path: ":p1Id",
-                  element: <Products1Detail />,
-                },
-                {
-                  path: ":p2Id",
-                  element: <Products2Detail />,
-                }, 
-              
-            
+                  path: ":pId",
+                  element: <ProductsDetail />,
+                }
+              ]
+              },
+              {
+                path: ":pId",
+                element: <ProductsDetail />,
+              }
           ],
         },
       ],

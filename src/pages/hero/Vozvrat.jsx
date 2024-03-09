@@ -1,6 +1,6 @@
 const Vozvrat = () => {
-  return (
-    <div className="mx-auto container text-lg">
+  return (<div className="bg-stone-100">
+    <div className="container mx-auto text-lg">
       <h1 className="mt-12 text-4xl">Возврат товара</h1>
       <p className="mt-4">
         Мы понимаем, что могут возникнуть ситуации, в которых купленный вами
@@ -51,7 +51,7 @@ const Vozvrat = () => {
         покупателей. Средства за покупку также возвращаются тем же способом,
         которым мы получили их от покупателя.
       </p>
-      <p className="mt-4 pb-24">
+      <p className="mt-4 pb-14">
         Если с купленной техникой возникнут проблемы в ходе эксплуатации, то вы
         можете обратиться для получения гарантийного обслуживания в срок,
         установленный для каждого вида товара индивидуально. Для некоторых видов
@@ -63,7 +63,7 @@ const Vozvrat = () => {
         сайте.
       </p>
     </div>
-  );
+  </div>);
 };
 
 export default Vozvrat;

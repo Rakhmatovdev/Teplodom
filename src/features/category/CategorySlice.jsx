@@ -10,16 +10,14 @@ const categorySlice = createSlice({
     getCategory:(state,action)=>{
     state.category=action.payload
     }
-
-    
   },
 });
 export const {r } = categorySlice.actions;
 export default categorySlice.reducer;
 
-export function getCategory(url) {
+export function getCategory() {
   return async function (dispatch) {
-  
+  const url="http://localhost:7777/category"
       const resp = await fetch(
         `${url}`
       );

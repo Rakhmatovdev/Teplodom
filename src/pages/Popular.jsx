@@ -1,15 +1,26 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { removeLike } from "./LikeSlie";
-import { addBacket } from "../backet/BacketSlice";
-const Like = () => {
-  const data = useSelector((state) => state.like.like);
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../features/products/ProductSlice";
+import { addBacket } from "../features/backet/BacketSlice";
+import { addLike } from "../features/like/LikeSlie";
+
+const Popular = () => {
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.products.products);
+  useEffect(() => {
+    dispatch(getProducts(200));
+  }, []);
   return (
     <div className="bg-stone-100">
-      <div className="container mx-auto">
-      <h1 className="pt-8 text-3xl">Избранные товары</h1>
-        <div className="flex flex-wrap gap-3 justify-center md:justify-around  py-12">
+      <div className="container mx-auto pt-12">
+        <div className="flex justify-between text-xl py-4">
+          <h1 className="font-semibold tracking-wider  text-2xl  ">Популярные товары</h1>
+          <NavLink to={"/new"}>
+            <span className="text-lg">Смотреть все &gt;</span>
+          </NavLink>
+        </div>
+        <div className="flex flex-wrap gap-4 justify-between">
           {data.map((product) => {
             return (
               <div
@@ -32,17 +43,17 @@ const Like = () => {
                 </h2>
                 <div className="flex px-4 mt-3 gap-2 text-white ">
                   <button
-                    className="flex items-center flex-1 rounded-lg  gap-2  bg-yellow-400 px-7 py-2 "
+                    className="flex items-center flex-1 rounded-lg  gap-1  bg-yellow-400 px-7 py-2 "
                     onClick={() => dispatch(addBacket(product))}
                   >
                     <i className='bx bxs-shopping-bags fa-xl'></i>        
-           <span className="text-lg">В корзину</span>
+                    <span className="text-lg">В корзину</span>
                   </button>
                   <button
-                    className="border-2 text-stone-200 hover:border-red-500 hover:text-red-500   rounded-lg   px-2"
-                    onClick={() => dispatch(removeLike(product.id))}
+                    className="bg-yellow-400 rounded-lg   px-2"
+                    onClick={() => dispatch(addLike(product))}
                   >
-                    <i className="fa-solid fa-trash-can"></i>
+                  <i className="fa-regular fa-heart fa-xl "></i>
                   </button>
                 </div>
               </div>
@@ -53,5 +64,4 @@ const Like = () => {
     </div>
   );
 };
-
-export default Like;
+export default Popular;

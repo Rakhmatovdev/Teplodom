@@ -51,7 +51,7 @@ const Footer = () => {
               <br />
               Джамий, дом 134</i> </div>
         </div>
-       <div className="text-center pb-12 pt-4">&copy;2021 Teplodom. Все права защищены</div> 
+       <div className="text-center pb-4 pt-4">&copy;2021 Teplodom. Все права защищены</div> 
       </div>
     </div>
   );

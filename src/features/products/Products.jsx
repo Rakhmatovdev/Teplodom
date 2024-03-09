@@ -1,16 +1,24 @@
-import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { removeLike } from "./LikeSlie";
+import { useSelector, useDispatch } from "react-redux";
+import { getProducts } from "./ProductSlice";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { addBacket } from "../backet/BacketSlice";
-const Like = () => {
-  const data = useSelector((state) => state.like.like);
+import { addLike } from "../like/LikeSlie";
+
+const Products = () => {
+  const { products } = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const { pId } = useParams();
+  useEffect(() => {
+    dispatch(getProducts(pId));
+  }, []);
   return (
     <div className="bg-stone-100">
       <div className="container mx-auto">
-      <h1 className="pt-8 text-3xl">Избранные товары</h1>
-        <div className="flex flex-wrap gap-3 justify-center md:justify-around  py-12">
-          {data.map((product) => {
+        <h1 className="text-xl font-semibold pt-10 ">Товары</h1>
+        <ul className="flex flex-wrap  gap-3 justify-between   py-12">
+          {products?.map((product) => {
             return (
               <div
                 className="bg-white rounded-2xl w-[255px] h-[401px] relative"
@@ -32,26 +40,26 @@ const Like = () => {
                 </h2>
                 <div className="flex px-4 mt-3 gap-2 text-white ">
                   <button
-                    className="flex items-center flex-1 rounded-lg  gap-2  bg-yellow-400 px-7 py-2 "
+                    className="flex items-center flex-1 rounded-lg    bg-yellow-400 px-7 py-2 "
                     onClick={() => dispatch(addBacket(product))}
                   >
-                    <i className='bx bxs-shopping-bags fa-xl'></i>        
-           <span className="text-lg">В корзину</span>
+                    <img src="/photos/backet.png" alt="backet" />
+                    <span className="text-lg">В корзину</span>
                   </button>
                   <button
-                    className="border-2 text-stone-200 hover:border-red-500 hover:text-red-500   rounded-lg   px-2"
-                    onClick={() => dispatch(removeLike(product.id))}
+                    className="bg-yellow-400 rounded-lg   px-2"
+                    onClick={() => dispatch(addLike(product))}
                   >
-                    <i className="fa-solid fa-trash-can"></i>
+                    <img src="/photos/like.png" alt="like" />
                   </button>
                 </div>
               </div>
             );
           })}
-        </div>
+        </ul>{" "}
       </div>
     </div>
   );
 };
 
-export default Like;
+export default Products;

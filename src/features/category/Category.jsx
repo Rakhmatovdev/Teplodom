@@ -1,62 +1,30 @@
-
-import { NavLink } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch'
-import { Fragment, useEffect } from 'react';
-import like from "../../photos/like.svg"
-import { useDispatch } from 'react-redux';
-import { addBacket, addLike, addSale } from '../../router/FirstSlice';
-import { getCategory } from './CategorySlice';
-import { useSelector } from 'react-redux';
+import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from "react";
+import { getCategory } from "./CategorySlice";
 
 const Category = () => {
-    const dispatch=useDispatch()
-    const data=useSelector(state=>state.category)
-    console.log(data);
-    useEffect(()=>{
-dispatch(getCategory(`https://dummyjson.com/products/category/mens-watches`))
-    },[dispatch])
-  return (
-    <div className='container'>
-        <div className="wrapper d-flex flex-wrap justify-content-between">
+  const { category}=useSelector(state=>state.category)
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(getCategory())
+  },[])
 
-{data?.products.map((product) => {
-          return (
-            <Fragment key={product.id}>
-              <div className="card m-2">
-                <div className="card-image">
-               <NavLink to={`/sale`}>   <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    id="imgs"
-                    className="cover"
-                    width={"100"}
-                 onClick={()=>dispatch(addSale(product))}
-                  /></NavLink>
-                </div>
-                <div className="card-titlee h3 mt-2">{product.title.slice(0, 10)}</div>
-                <div className="card-price mt-2 text-danger">Price: {product.price} $</div>
-                <div className="buttons d-flex gap-2 mt-3">
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => dispatch(addBacket(product))}
-                  >
-                    <div className="fa fa-basket-shopping"></div> В корзину
-                  </button>
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => dispatch(addLike(product))}
-                  >
-              
-                 <img src={like} alt="" />
-                  </button>
-                </div>
-              </div>
-            </Fragment>
-          );
-        })}
-        </div>
-    </div>
-  )
+  return (<div className="bg-stone-100">
+    <div className=" container mx-auto">
+      <h1 className="text-xl font-semibold pt-10 ">Категории</h1>
+      <ul className='flex flex-wrap gap-3 justify-between mt-4 mb-10'>
+        
+    {category.map((category) => {
+      return (
+        <NavLink to={`/products/products1/${category?.categoryId}`} className='border-2 w-[264px] h-[255px] rounded-xl bg-white' key={category.id}>
+          <img className='mx-auto bg-cover w-[201px] h-[171px] my-4' src={category.image} alt="" />
+          <h1 className='text-center text-lg font-semibold'>{category.name}</h1>
+        </NavLink>
+      );
+    })}
+  </ul></div>
+  </div>)
 }
 
 export default Category

@@ -1,7 +1,9 @@
 const Sale = () => {
   return (
-    <div>Sale1</div>
-  )
-}
+    <div className="container mx-auto">
+      <div>Sale1</div>
+    </div>
+  );
+};
 
-export default Sale
+export default Sale;

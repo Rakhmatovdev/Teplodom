@@ -1,6 +1,6 @@
 const Contacts = () => {
-  return (
-    <div className="container mt-2 mb-2 mx-auto">
+  return (<div className="bg-stone-100">
+    <div className="container mx-auto  pt-2 pb-14">
       <h1 className="mt-12 text-4xl ">Пользовательское соглашение</h1>
       <p className="mt-4 text-lg">
         Публичная Оферта 1. Основные положения. 1.1. Данная Оферта является
@@ -61,7 +61,7 @@ const Contacts = () => {
         может быть изменен по согласию Сторон.
       </p>
     </div>
-  );
+ </div> );
 };
 
 export default Contacts;

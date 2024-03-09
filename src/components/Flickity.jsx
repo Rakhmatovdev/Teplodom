@@ -4,7 +4,7 @@ function Flickityn() {
     return (
       <Flickity className="lg:container mx-auto mt-[20px] sm:mt-[60px]">
         <div
-          className={`w-full h-[307px]   sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 `}
+          className={`w-full h-[307px]   sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 rounded-2xl `}
           style={{ backgroundImage: `url(${`./photos/h1.png`})` }}
         >
           <div className=" flex-1">
@@ -29,7 +29,7 @@ function Flickityn() {
           />
         </div>
         <div
-          className={` w-full h-[307px] sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3`}
+          className={` w-full h-[307px] sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3 rounded-2xl`}
           style={{
             backgroundImage: ` url(${`./photos/h3.png`})`,
             objectFit: "cover",
@@ -54,7 +54,7 @@ function Flickityn() {
         </div>
 
         <div
-          className={`w-full h-[307px]  sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3`}
+          className={`w-full h-[307px]  sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3 rounded-2xl`}
           style={{ backgroundImage: `url(${`./photos/h5.png`})` }}
         >
           <div className=" flex-1">
@@ -86,7 +86,7 @@ function Flickityn() {
           </div>
         </div>
         <div
-          className={`w-full h-[307px]  sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3`}
+          className={`w-full h-[307px]  sm:h-[420px] bg-center bg-cover flex justify-between gap-9 lg:gap-0 flex-row xs:flex-row items-center lg:px-4 px-3 rounded-2xl`}
           style={{ backgroundImage: `url(${`./photos/h8.png`})` }}
         >
           <div className=" flex-1">
@@ -107,7 +107,7 @@ function Flickityn() {
           <img
             src={`./photos/h9.png`}
             alt="Пеноплекс"
-            className=" object-contain w-[10p5x] h-[151px] sm:h-[391px] sm:w-[317px]"
+            className=" object-contain w-[105x] h-[151px] sm:h-[391px] sm:w-[317px]"
           />
         </div>
       </Flickity>

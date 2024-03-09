@@ -1,29 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-product:[]
+products:[],
+detail:[]
 };
 const productSlice = createSlice({
-  name: "product",
+  name: "products",
   initialState,
   reducers: {
+   getProducts:(state,action)=>{
+  state.products=action.payload;
+   },
+   getDetail:(state,action)=>{
+    state.detail=action.payload;
+   },
    
-    
   },
 });
-export const {r} = productSlice.actions;
+export const {} = productSlice.actions;
 export default productSlice.reducer;
 
-// export function shotToldirish(amount, currency) {
-//   return async function (dispatch) {
-//     if (!currency === "USD") {
-//       const resp = await fetch(
-//         `https://api.frankfurter.app/latest?amount=${amount}&from=${currency}&to=USD`
-//       );
-//       const data = await resp.json();
-//       dispatch({ type: "acount/shotToldirish", payload: data.rates.USD });
-//     } else {
-//       dispatch({ type: "acount/shotToldirish", payload: amount });
-//     }
-//   };
-// }
+export function getProducts(id) {
+  return async function (dispatch) {
+   const url='http://localhost:7777/products'
+      const resp = await fetch(`${url}`);
+      const data = await resp.json();
+      dispatch({ type: "products/getProducts", payload: data.filter((product)=>product.categoryId==id) });
+    }
+  }
+export function getDetail(id) {
+  return async function (dispatch) {
+   const url=`http://localhost:7777/products`
+      const resp = await fetch(`${url}`);
+      const data = await resp.json();
+      dispatch({ type: "products/getDetail", payload: data.filter((product)=>product.id==id) });
+  
+    }
+  }
+

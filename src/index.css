@@ -5,10 +5,15 @@
 
 @layer components{
     .btn-orange{
-        @apply items-center  p-2 rounded-lg  bg-slate-100 text-black font-extrabold active:text-white active:bg-orange-400 
+        @apply items-center  p-2 rounded-lg  bg-stone-200/75 text-black font-extrabold focus:text-white focus:bg-orange-400 
     }
 }
 
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
 
 
 
@@ -24,11 +29,6 @@ ul,li,a,button{
   
   .read-the-docs {
     color: #888;
-  }
-  body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
   }
   #search{
     width: 445px;
