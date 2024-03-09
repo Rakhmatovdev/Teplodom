@@ -12,13 +12,13 @@ const RootCategory = () => {
 
   return (<div className="bg-stone-100">
     <div className="container mx-auto">
-      <div className="flex justify-between mt-12 text-xl">
+      <div className="flex justify-between mt-14 text-xl">
         <div className="font-semibold text-2xl tracking-wider   ">Категории</div>
-        <NavLink to={"category"} className="text-lg">
+        <NavLink to={"category"} className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">
           Все &gt;
         </NavLink>
       </div>
-      <ul className=" flex overflow-hidden snap-proximity  gap-3 justify-between mt-4 pb-10 snap-x">
+      <ul className=" flex overflow-hidden snap-proximity  gap-3 justify-between mt-8 pb-10 snap-x">
         {category.slice(0, 6).map((category) => {
           return (
             <NavLink

@@ -5,7 +5,7 @@
 
 @layer components{
     .btn-orange{
-        @apply items-center  p-2 rounded-lg  bg-stone-200/75 text-black font-extrabold focus:text-white focus:bg-orange-400 
+        @apply items-center px-6 py-3 tracking-wide text-lg   rounded-lg  bg-stone-200/75 text-black font-extrabold focus:text-white focus:bg-orange-400 
     }
 }
 
@@ -17,7 +17,7 @@ box-sizing: border-box;
 
 
 
-ul,li,a,button{
+ul,li,button{
     text-decoration: none !important;
     list-style-type: none !important;
     /* color: inherit !important; */

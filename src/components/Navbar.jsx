@@ -6,7 +6,7 @@ const Navbar = () => {
   const dispatch=useDispatch()
   const searchValue=useSelector(state=>state.user.search)
   return (
-    <div className=" container  mt-12 mx-auto">
+    <div className=" container  mt-16 mx-auto">
       <div className="">
         <div className="flex items-center justify-between  ">
           <NavLink to="/" className="flex">
@@ -40,13 +40,13 @@ const Navbar = () => {
           </label>
 
           <div  className="gap-4 flex items-center text-black">
-            <NavLink to="like" className=" px-3 py-2.5 rounded-full bg-slate-50 focus:bg-orange-500 focus:text-white ">
+            <NavLink to="like" className=" px-4 py-3.5 rounded-full bg-slate-50 focus:bg-orange-500 focus:text-white ">
               <i className="fa-regular fa-heart fa-lg"></i>{" "}
             </NavLink>
-            <NavLink to="backet" className=" px-3 py-2.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
+            <NavLink to="backet" className=" px-4 py-3.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
               <i className="bx bxs-shopping-bags fa-lg"></i>
             </NavLink>
-            <NavLink to="user" className="flex gap-2 items-center  px-3 py-2.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
+            <NavLink to="user" className="flex gap-4 items-center  px-4 py-3.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
               <i className="fa-regular fa-user fa-lg"></i>
               <span className="hidden lg:flex"> Профиль</span>
             </NavLink>{" "}

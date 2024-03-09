@@ -2,9 +2,9 @@ const Komanda = () => {
   return (
     <div className="bg-stone-100">
       <div className="container md   mx-auto  ">
-        <div className="text-xl flex justify-between items-center pt-16">
+        <div className="text-xl flex justify-between items-center pt-20">
           <h1 className="text-2xl font-semibold ">Наши команда</h1>
-          <div className="">&gt;</div>
+          <div className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">&gt;</div>
         </div>
         <div className="flex flex-wrap justify-between items-center mt-8">
           <div className="w-[255px] h-[295px] bg-white rounded-xl">

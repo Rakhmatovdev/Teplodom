@@ -14,10 +14,10 @@ const NewProducts = () => {
   return (
     <div className="bg-stone-100">
       <div className="container mx-auto">
-        <div className="flex justify-between text-xl py-4">
+        <div className="flex justify-between text-xl py-8">
           <h1 className="font-semibold tracking-wider  text-2xl  ">Новинки на сайте</h1>
           <NavLink to={"/new"}>
-            <span className="text-lg">Смотреть все &gt;</span>
+            <span className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">Смотреть все &gt;</span>
           </NavLink>
         </div>
         <div className="flex flex-wrap gap-4 justify-between">

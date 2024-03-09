@@ -5,10 +5,10 @@ const Category = () => {
     <div>
       <nav className="container mx-auto mt-12 ">
         <div className=" ">
-          <div className="gap-3 items-center justify-between hidden md:flex">
+          <div className="gap-3 items-center   justify-between hidden md:flex">
             <NavLink
               to={"/sale"}
-              className={"btn-orange"}
+              className={"btn-orange "}
             >
               Товары по акции
             </NavLink>
