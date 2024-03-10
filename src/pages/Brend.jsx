@@ -5,7 +5,7 @@ const Brend = () => {
             <div className="container mx-auto pt-28">
                 <div className="flex justify-between items-center text-xl">
                     <div className=" text-2xl font-semibold tracking-wider">Бренды</div>
-                    <div className=""><span> </span> <span className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">&gt;</span>  </div>
+                    <div className=""><span> </span> <span className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-fuchsia-500">&gt;</span>  </div>
                 </div>
                 <div className="flex flex-wrap justify-between items-center mt-10 pb-4">
                     <div className=" w-[193px] h-[181px] rounded-2xl bg-white">

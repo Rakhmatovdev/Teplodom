@@ -1,9 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { removeBacket } from "./BacketSlice";
+import { message } from 'antd';
 const Backet = () => {
   const data = useSelector((state) => state.backet.backet);
   const dispatch = useDispatch();
+
+const handleBacket=(data)=>{
+  dispatch(removeBacket(data))
+  message.open({
+    type: "error",
+    content: "удалено из корзины",
+  });
+}
+
+
   return (
     <div className="bg-stone-100">
       <div className="container mx-auto">
@@ -36,7 +47,7 @@ const Backet = () => {
                   </button>
                   <button
                     className="border-2 text-stone-200 hover:border-red-500 hover:text-red-500   rounded-lg   px-2"
-                    onClick={() => dispatch(removeBacket(product.id))}
+                    onClick={() => handleBacket(product.id)}
                   >
                     <i className="fa-solid fa-trash-can"></i>
                   </button>

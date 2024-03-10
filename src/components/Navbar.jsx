@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchValue } from "../features/user/UserSlice";
-
+import likee from "../../public/photos/like.svg"
 const Navbar = () => {
   const dispatch=useDispatch()
   const searchValue=useSelector(state=>state.user.search)
@@ -12,7 +12,7 @@ const Navbar = () => {
           <NavLink to="/" className="flex">
             <img className="bg-cover " src="/photos/logo.png" alt="user" />
             <div className="flex flex-col ml-1">
-              <span className="text-2xl font-extrabold text-orange-500 ">
+              <span className="text-2xl font-extrabold text-[#F87C3A] ">
                 TEPLODOM
               </span>
               <span className="text-sm ml-1 text-black">
@@ -39,17 +39,14 @@ const Navbar = () => {
             />
           </label>
 
-          <div  className="gap-4 flex items-center text-black">
-            <NavLink to="like" className=" px-4 py-3.5 rounded-full bg-slate-50 focus:bg-orange-500 focus:text-white ">
-              <i className="fa-regular fa-heart fa-lg"></i>{" "}
-            </NavLink>
-            <NavLink to="backet" className=" px-4 py-3.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
-              <i className="bx bxs-shopping-bags fa-lg"></i>
-            </NavLink>
-            <NavLink to="user" className="flex gap-4 items-center  px-4 py-3.5 rounded-full bg-slate-50 text-black focus:bg-orange-500 focus:text-white">
-              <i className="fa-regular fa-user fa-lg"></i>
-              <span className="hidden lg:flex"> Профиль</span>
-            </NavLink>{" "}
+          <div  className="gap-4 flex items-center text-black">      
+              <NavLink to="like" className=" fa-solid fa-heart rounded-full bg-slate-50 fa-lg px-4 py-6 focus:text-red-400  " ></NavLink>
+          
+              <NavLink to="backet" className="bx bxs-shopping-bags  fa-lg px-4 py-4 rounded-full bg-slate-50 focus:text-red-400" ></NavLink>
+          
+           
+              <NavLink to="user"  className="fa-solid fa-user fa-lg px-4 py-6 rounded-full bg-slate-50 focus:text-red-400"> <span className="hidden lg:flex ml-6">    Профиль</span></NavLink>
+          
           </div>
         </div>
         <div className="flex md:hidden items-center justify-between mt-3">

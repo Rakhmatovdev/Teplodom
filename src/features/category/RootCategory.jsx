@@ -14,7 +14,7 @@ const RootCategory = () => {
     <div className="container mx-auto">
       <div className="flex justify-between mt-14 text-xl">
         <div className="font-semibold text-2xl tracking-wider   ">Категории</div>
-        <NavLink to={"category"} className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">
+        <NavLink to={"category"} className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-fuchsia-500 ">
           Все &gt;
         </NavLink>
       </div>
@@ -27,7 +27,7 @@ const RootCategory = () => {
               key={category.id}
             >
               <img
-                className="mx-auto bg-cover w-[130px] h-[110px]"
+                className="mx-auto bg-cover w-[130px] h-[110px] "
                 src={category.image}
                 alt=""
               />

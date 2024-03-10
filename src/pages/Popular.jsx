@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../features/products/ProductSlice";
 import { addBacket } from "../features/backet/BacketSlice";
 import { addLike } from "../features/like/LikeSlie";
+import { message } from 'antd';
 
 const Popular = () => {
   const dispatch = useDispatch();
@@ -11,13 +12,31 @@ const Popular = () => {
   useEffect(() => {
     dispatch(getProducts(200));
   }, []);
+
+  const handleBacket=(product)=>{
+    dispatch(addBacket(product))
+    message.open({
+      type: "success",
+      content: "добавлено в корзину",
+    });
+  }
+
+  const handleLike=(product)=>{
+    dispatch(addLike(product))
+    message.open({
+      type: "success",
+      content: "добавлено в избранное",
+    });
+  }
+
+  
   return (
     <div className="bg-stone-100">
       <div className="container mx-auto pt-20">
         <div className="flex justify-between text-xl py-4">
           <h1 className="font-semibold tracking-wider  text-2xl  ">Популярные товары</h1>
           <NavLink to={"/new"}>
-            <span className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-sky-500">Смотреть все &gt;</span>
+            <span className="text-lg text-sky-600 hover:underline underline-offset-1 hover:text-fuchsia-500">Смотреть все &gt;</span>
           </NavLink>
         </div>
         <div className="flex flex-wrap mt-8 gap-4 justify-between">
@@ -43,15 +62,15 @@ const Popular = () => {
                 </h2>
                 <div className="flex px-4 mt-3 gap-2 text-white ">
                   <button
-                    className="flex items-center flex-1 rounded-lg  gap-1  bg-yellow-400 px-7 py-2 "
-                    onClick={() => dispatch(addBacket(product))}
+                    className="flex items-center flex-1 rounded-lg  gap-1  orange px-7 py-2 "
+                    onClick={() => handleBacket(product)}
                   >
                     <i className='bx bxs-shopping-bags fa-xl'></i>        
                     <span className="text-lg">В корзину</span>
                   </button>
                   <button
-                    className="bg-yellow-400 rounded-lg   px-2"
-                    onClick={() => dispatch(addLike(product))}
+                    className="orange rounded-lg   px-2"
+                    onClick={() => handleLike(product)}
                   >
                   <i className="fa-regular fa-heart fa-xl "></i>
                   </button>

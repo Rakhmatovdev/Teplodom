@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { addBacket } from "../backet/BacketSlice";
 import { addLike } from "../like/LikeSlie";
+import { message } from "antd";
 
 const Products = () => {
   const { products } = useSelector((state) => state.products);
@@ -13,6 +14,25 @@ const Products = () => {
   useEffect(() => {
     dispatch(getProducts(pId));
   }, []);
+
+//Backet
+const handleBacket=(product)=>{
+  dispatch(addBacket(product))
+  message.open({
+    type: "success",
+    content: "добавлено в корзину",
+  });
+}
+
+//Like
+const handleLike=(product)=>{
+  dispatch(addLike(product))
+  message.open({
+    type: "success",
+    content: "добавлено в избранное",
+  });
+}
+
   return (
     <div className="bg-stone-100">
       <div className="container mx-auto">
@@ -41,16 +61,16 @@ const Products = () => {
                 <div className="flex px-4 mt-3 gap-2 text-white ">
                   <button
                     className="flex items-center flex-1 rounded-lg    bg-yellow-400 px-7 py-2 "
-                    onClick={() => dispatch(addBacket(product))}
+                    onClick={() =>handleBacket(product)}
                   >
                     <img src="/photos/backet.png" alt="backet" />
                     <span className="text-lg">В корзину</span>
                   </button>
                   <button
                     className="bg-yellow-400 rounded-lg   px-2"
-                    onClick={() => dispatch(addLike(product))}
+                    onClick={() =>handleLike(product)}
                   >
-                    <img src="/photos/like.png" alt="like" />
+                    <img src="/photos/like1.png" alt="like" />
                   </button>
                 </div>
               </div>
